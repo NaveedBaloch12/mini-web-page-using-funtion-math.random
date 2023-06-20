@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>evevtlistner</title>
+
+    <style>
+        #contanier{
+            padding: 30px;
+            background-color: orange;
+            font-size: 20px;
+            border: 3px dashed black;
+        }
+    </style>
+</head>
+<body>
+    <!-- <div class="contanier">
+        Here We I used addEventListener().
+    </div> -->
+
+        <!-- <button id="btn">Click</button>
+        <p id="demo"></p> -->
+    
+        <!-- <button id="btn">Click</button> -->
+
+
+        <div id="contanier">
+            <p>
+                Here I used addEventListener() and removeEventListener(). When you move yout mose on the Orange box Math.random() funtion will be running. <br>
+                Now click Below toe butons to stop and resume Math.random() funtion.
+            </p>
+            <button id="btn" onclick="removefuntion()">Remove</button>
+            <button id="btn1" onclick="resumefuntion()">Resume</button>
+        </div>
+
+        <div id="demo"></div>
+
+    
+    <script>
+        // document.getElementById('btn').addEventListener("click", myfunction);
+
+        // function myfunction(){
+        //     document.getElementById('demo').innerHTML = Date();
+        //     setInterval(myfunction, 1000)
+        // }
+
+        // document.getElementById('btn').addEventListener('click', function(){ 
+        //     alert("Stoooop doing this...")
+        // });
+
+
+            // document.getElementById('btn').addEventListener("click", myfunction);
+            // function myfunction(){
+            //     alert("Stooop doing this....")
+            // }
+
+            // var x = document.getElementById('btn');
+            // x.addEventListener("click", f_function);
+            // x.addEventListener("click", s_function);
+            // function f_function(){
+            //     alert("Stooop doing this....");
+            // }
+
+            // function s_function(){
+            //     alert("Why are you not stoping???");
+            // }
+
+
+            document.getElementById('contanier').addEventListener("mousemove", myfunction);
+            
+            function myfunction(){
+                document.getElementById("demo").innerHTML = Math.random();
+            }
+            
+            function resumefuntion(){
+                document.getElementById('contanier').addEventListener("mousemove", myfunction);
+            }
+
+            function removefuntion(){
+                document.getElementById("contanier").removeEventListener("mousemove", myfunction)
+            }
+
+
+
+
+    </script>
+</body>
+</html>
